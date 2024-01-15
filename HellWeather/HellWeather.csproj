@@ -60,6 +60,7 @@
     <Compile Include="HellWeatherBase.cs" />
     <Compile Include="HellWeatherEffect.cs" />
     <Compile Include="Patches\LevelWeatherTypePatch.cs" />
+    <Compile Include="Patches\RoundManagerPatch.cs" />
     <Compile Include="Patches\StartOfRoundPatch.cs" />
     <Compile Include="Patches\TimeOfDayPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
