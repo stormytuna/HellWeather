@@ -33,7 +33,6 @@ namespace HellWeather
 
 		#region Config
 
-		// TODO: Actually implement config stuffs
 		public static ConfigEntry<bool> AllowRainyWeather;
 		public static ConfigEntry<bool> AllowFoggyWeather;
 		public static ConfigEntry<bool> AllowFloodedWeather;
