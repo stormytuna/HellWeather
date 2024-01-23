@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using HellWeather.Helpers;
 
 namespace HellWeather.Patches
 {
@@ -41,7 +42,7 @@ namespace HellWeather.Patches
 		[HarmonyPostfix]
 		[HarmonyPatch(typeof(RoundManager), nameof(RoundManager.SetToCurrentLevelWeather))]
 		public static void SetupCurrentWeatherVariables(RoundManager __instance) {
-			foreach (RandomWeatherWithVariables possibleWeather in __instance.currentLevel.randomWeathers) {
+			foreach (RandomWeatherWithVariables possibleWeather in WeatherHelpers.GetVanillaRandomWeathers(__instance.currentLevel)) {
 				currentWeatherVariables[(int)possibleWeather.weatherType] = possibleWeather.weatherVariable;
 				currentWeatherVariables2[(int)possibleWeather.weatherType] = possibleWeather.weatherVariable2;
 			}

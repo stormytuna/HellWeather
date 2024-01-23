@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using HellWeather.Helpers;
 
 namespace HellWeather.Patches
 {
@@ -6,7 +7,7 @@ namespace HellWeather.Patches
 	public class EnableDisableWeatherEffectsPatches
 	{
 		private static void EnablePossibleWeatherEffects() {
-			foreach (RandomWeatherWithVariables possibleWeather in StartOfRound.Instance.currentLevel.randomWeathers) {
+			foreach (RandomWeatherWithVariables possibleWeather in WeatherHelpers.GetVanillaRandomWeathers(StartOfRound.Instance.currentLevel)) {
 				if (!HellWeatherBase.CanApplyChangesToWeather(possibleWeather.weatherType)) {
 					continue;
 				}
@@ -20,7 +21,7 @@ namespace HellWeather.Patches
 		}
 
 		private static void DisableWeatherEffects() {
-			foreach (WeatherEffect weatherEffect in TimeOfDay.Instance.effects) {
+			foreach (WeatherEffect weatherEffect in WeatherHelpers.GetVanillaWeatherEffects()) {
 				weatherEffect.effectEnabled = false;
 				if (weatherEffect.effectPermanentObject != null) {
 					weatherEffect.effectPermanentObject.SetActive(false);

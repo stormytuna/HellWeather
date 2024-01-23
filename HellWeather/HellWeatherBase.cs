@@ -1,4 +1,6 @@
-﻿using BepInEx;
+﻿using System;
+using System.Linq;
+using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
@@ -15,14 +17,16 @@ namespace HellWeather
 		public static ManualLogSource Log = BepInEx.Logging.Logger.CreateLogSource(ModGUID);
 		public static HellWeatherBase Instance;
 
-		private readonly Harmony harmony = new Harmony(ModGUID);
+		public static LevelWeatherType HellWeather;
 
-		public static LevelWeatherType HellWeather => (LevelWeatherType)6; // Shitty hardcode but I can't find a way around it - will need to update if another weather is added
+		private readonly Harmony harmony = new Harmony(ModGUID);
 
 		private void Awake() {
 			if (Instance is null) {
 				Instance = this;
 			}
+
+			HellWeather = Enum.GetValues(typeof(LevelWeatherType)).Cast<LevelWeatherType>().Max() + 1;
 
 			Log.LogInfo("Hell Weather has awoken!");
 
