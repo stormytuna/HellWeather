@@ -7,8 +7,10 @@ namespace HellWeather.Helpers
 	{
 		public static bool IsVanillaWeather(LevelWeatherType weatherType) => weatherType >= LevelWeatherType.None && weatherType <= LevelWeatherType.Eclipsed;
 
-		public static IEnumerable<RandomWeatherWithVariables> GetVanillaRandomWeathers(SelectableLevel level) {
-			return level.randomWeathers.Where(rw => IsVanillaWeather(rw.weatherType));
+		public static bool IsVanillaWeatherWithEffect(LevelWeatherType weatherType) => weatherType > LevelWeatherType.None && weatherType <= LevelWeatherType.Eclipsed;
+
+		public static IEnumerable<RandomWeatherWithVariables> GetVanillaRandomWeathersWithEffects(SelectableLevel level) {
+			return level.randomWeathers.Where(rw => IsVanillaWeatherWithEffect(rw.weatherType));
 		}
 
 		public static IEnumerable<WeatherEffect> GetVanillaWeatherEffects() {

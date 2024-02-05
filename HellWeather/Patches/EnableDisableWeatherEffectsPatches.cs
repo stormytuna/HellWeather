@@ -7,7 +7,7 @@ namespace HellWeather.Patches
 	public class EnableDisableWeatherEffectsPatches
 	{
 		private static void EnablePossibleWeatherEffects() {
-			foreach (RandomWeatherWithVariables possibleWeather in WeatherHelpers.GetVanillaRandomWeathers(StartOfRound.Instance.currentLevel)) {
+			foreach (RandomWeatherWithVariables possibleWeather in WeatherHelpers.GetVanillaRandomWeathersWithEffects(StartOfRound.Instance.currentLevel)) {
 				if (!HellWeatherBase.CanApplyChangesToWeather(possibleWeather.weatherType)) {
 					continue;
 				}
