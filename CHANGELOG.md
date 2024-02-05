@@ -1,3 +1,4 @@
+- v1.0.3: Fix an issue with crashing on modded moons
 - v1.0.2: Fix an issue preventing unloading
 - v1.0.1: Refactor some things to allow better mod compatibility
 - v1.0.0: Initial release

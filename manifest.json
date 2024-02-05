@@ -1,6 +1,6 @@
 {
   "name": "HellWeather",
-  "version_number": "1.0.2",
+  "version_number": "1.0.3",
   "website_url": "https://github.com/stormytuna/HellWeather",
   "description": "Hell Weather adds a new weather type that is a combination of all weather types",
   "dependencies": []

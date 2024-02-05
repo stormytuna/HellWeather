@@ -12,7 +12,7 @@ namespace HellWeather
 	{
 		public const string ModGUID = "stormytuna.HellWeather";
 		public const string ModName = "HellWeather";
-		public const string ModVersion = "1.0.2";
+		public const string ModVersion = "1.0.3";
 
 		public static ManualLogSource Log = BepInEx.Logging.Logger.CreateLogSource(ModGUID);
 		public static HellWeatherBase Instance;
